@@ -22,6 +22,8 @@ void run() {
     for (int i = 0; i < k; i++) {
         mutexes[i]->lock();
         (*(shared_memory[i]))++;
+    }
+    for (int i = 0; i < k; i++) {
         mutexes[i]->unlock();
     }
 }
