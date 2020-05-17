@@ -24,3 +24,11 @@ add_executable(lab3_task_4 lab3/task4.cpp)
 add_executable(lab3_task_4.1 lab3/task4.1.cpp)
 add_executable(lab3_task_4.2 lab3/task4.2.cpp)
 
+
+add_executable(lab5_task1.1 lab5/task1.1.cpp)
+add_executable(lab5_task1.2 lab5/task1.2.cpp)
+add_executable(lab5_task2.1 lab5/task2.1.cpp)
+add_executable(lab5_task2.2 lab5/task2.2.cpp)
+add_executable(lab5_task3.client lab5/task3.client.cpp)
+add_executable(lab5_task3.server lab5/task3.server.cpp)
+add_executable(lab5_task4 lab5/task4.cpp)
