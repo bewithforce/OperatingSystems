@@ -63,7 +63,7 @@ void run(int k) {
             return;
         }
         writeLock.lock();
-      //  printf("from %d to server: %s\n", k, buf.mtext);
+        //  printf("from %d to server: %s\n", k, buf.mtext);
         chat.emplace_back(pair(buf.mtext, k));
         chatMonitor();
 
