@@ -12,7 +12,7 @@ int main() {
     d = opendir(pathname.c_str());
     while (d) {
         while ((dir = readdir(d)) != nullptr) {
-            if (dir->d_type == DT_DIR) {
+            if (dir->d_type != DT_DIR && dir->d_type != DT_LNK) {
                 cout << dir->d_name << endl;
             }
         }
