@@ -1,28 +1,44 @@
 #include <dirent.h>
 #include <iostream>
-#include <set>
+#include <cstring>
 
 using namespace std;
 
 int main() {
     DIR *d;
     struct dirent *dir;
-    set<string> files;
 
     string pathname = ".";
     d = opendir(pathname.c_str());
     while (d) {
         while ((dir = readdir(d)) != nullptr) {
-            if (dir->d_type != DT_LNK && dir->d_type != DT_DIR) {
+            if (dir->d_type == DT_DIR) {
                 cout << dir->d_name << endl;
             }
         }
-        closedir(d);
+        rewinddir(d);
+
         pathname.insert(0, "../");
-        d = opendir(pathname.c_str());
-    }
-    for (auto &item : files) {
-        cout << item << endl;
+        char bufTmp[PATH_MAX];
+        char buf[PATH_MAX];
+        DIR *tmp = opendir(pathname.c_str());
+
+        readdir(tmp);
+        readdir(tmp);
+        readdir(d);
+        readdir(d);
+
+        realpath(readdir(tmp)->d_name, bufTmp);
+        realpath(readdir(d)->d_name, buf);
+
+        if(strcmp(bufTmp, buf) == 0){
+            closedir(d);
+            closedir(tmp);
+            break;
+        }
+        rewinddir(tmp);
+        closedir(d);
+        d = tmp;
     }
     return 0;
 }
