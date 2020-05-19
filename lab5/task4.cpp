@@ -4,8 +4,6 @@
 #include <cstdio>
 #include <unistd.h>
 #include <string>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <vector>
 
 using namespace std;

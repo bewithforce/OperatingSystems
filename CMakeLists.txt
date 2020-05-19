@@ -24,6 +24,11 @@ add_executable(test_c test.c)
 #add_executable(lab3_task_4.1 lab3/task4.1.cpp)
 #add_executable(lab3_task_4.2 lab3/task4.2.cpp)
 
+add_executable(lab4_task1 lab4/task1.cpp)
+add_executable(lab4_task3 lab4/task3.cpp)
+add_executable(lab4_task4 lab4/task4.cpp)
+add_executable(lab4_task5 lab4/task5.cpp)
+
 add_executable(lab5_task1.1 lab5/task1.1.cpp)
 add_executable(lab5_task1.2 lab5/task1.2.cpp)
 add_executable(lab5_task2.1 lab5/task2.1.cpp)
@@ -33,4 +38,4 @@ add_executable(lab5_task3.server lab5/task3.server.cpp)
 add_executable(lab5_task4 lab5/task4.cpp)
 
 add_executable(lab6 lab6/task.cpp)
-add_executable(varya "lab6/varya_6(11).cpp")
+#add_executable(varya "lab6/varya_6(11).cpp")

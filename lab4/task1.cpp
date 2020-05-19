@@ -1,4 +1,12 @@
-//
-// Created by dzianis on 18/05/20.
-//
+#include <unistd.h>
 
+int main(){
+    if(fork()){
+        while(true){
+            pause();
+        }
+    } else {
+        while(true);
+    }
+
+}

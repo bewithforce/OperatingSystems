@@ -18,7 +18,7 @@ int main() {
     for (int i = 1; i < 5; i++) {
         mybuf.mtype = 1;
         strcpy(mybuf.mtext, "this text");
-        int len = strlen(mybuf.mtext) + 1;
+        auto len = strlen(mybuf.mtext) + 1;
         if (msgsnd(msgid, &mybuf, len, 0) < 0) {
             printf("bad send");
             msgctl(msgid, IPC_RMID, nullptr);
@@ -27,13 +27,11 @@ int main() {
     }
 
     mybuf.mtype = LAST_MESSAGES;
-    int len = 0;
-    if (msgsnd(msgid, &mybuf, len, 0) < 0) {
+    if (msgsnd(msgid, &mybuf, 0, 0) < 0) {
         printf("bad send");
         msgctl(msgid, IPC_RMID, nullptr);
         return 0;
     }
-
 
 }
 
